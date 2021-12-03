@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 
 class ThemeCollection extends ChangeNotifier {
-  static Map<int, Color> _colorSwatch(
+  /// _colorSwatch method or function take RGB color as argument and after processing
+  ///  it will return Map<int, Color> where int consist colors varients
+  Map<int, Color> _colorSwatch(
     int r,
     int g,
     int b,
@@ -28,6 +30,7 @@ class ThemeCollection extends ChangeNotifier {
 
   ThemeData get getActiveTheme => isDarkActive ? _darkTheme : _lightTheme;
 
+// Let's define a light theme for our Application
   ThemeData get _lightTheme => ThemeData(
       primarySwatch: MaterialColor(0xffFFFFFF, _colorSwatch(1, 117, 194)),
       primaryColor: const Color(0xff6622CC),
@@ -45,6 +48,7 @@ class ThemeCollection extends ChangeNotifier {
           caption: TextStyle(
               color: Colors.grey.shade700, wordSpacing: -1, fontSize: 12)));
 
+// Now define a dark theme for our Application
   ThemeData get _darkTheme => ThemeData(
       primarySwatch: MaterialColor(0xff0B0415, _colorSwatch(2, 86, 155)),
       primaryColor: const Color(0xff6622CC),

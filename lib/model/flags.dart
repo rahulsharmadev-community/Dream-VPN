@@ -1,4 +1,6 @@
 abstract class Flags {
+  /// Database of all flags in format : List<Map<String, String>>
+  /// eg. {"name": "India", "imagePath": "in.svg"}
   static List<Map<String, String>> get list => [
         {"name": "Andorra", "imagePath": "ad.svg"},
         {"name": "United Arab Emirates", "imagePath": "ae.svg"},

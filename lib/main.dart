@@ -1,7 +1,7 @@
-import 'package:dreamvpn/model/UserPreference.dart';
-import 'package:dreamvpn/routes/proRoute.dart';
+import 'model/UserPreference.dart';
+import '/routes/proRoute.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
 import 'pages/accountPage.dart';
 import 'pages/homePage.dart';
 import '/model/themeCollection.dart';
@@ -9,11 +9,21 @@ import 'pages/proPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider<ThemeCollection>.value(value: ThemeCollection()),
-    ChangeNotifierProvider<UserPreference>.value(value: UserPreference())
-  ], child: const MyApp()));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+// Set device orientation in potrait mode.
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]).then((_) => runApp(
+
+// For demonstration purpose I didn't store information on device or server
+// so, info. destroy when you restart an application
+          MultiProvider(providers: [
+        ChangeNotifierProvider<ThemeCollection>.value(value: ThemeCollection()),
+        ChangeNotifierProvider<UserPreference>.value(value: UserPreference())
+      ], child: const MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -51,7 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     bool isDarkTheme = Provider.of<ThemeCollection>(context).isDarkActive;
-
     return Scaffold(
         appBar: AppBar(
             shadowColor: Colors.transparent,
@@ -78,6 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ]
                 : null),
+
+/*Here Bottom Navigation Bar with some padding, margin,
+ little bit color & border decoration*/
         bottomNavigationBar: Container(
           margin: const EdgeInsets.only(left: 32, right: 32, bottom: 16),
           padding: const EdgeInsets.only(top: 8.0),
