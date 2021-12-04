@@ -1,9 +1,5 @@
 <p align="center">
-<<<<<<< Updated upstream
   <img width="200" src="assets/logo.svg" alt="logo">
-=======
-  <img width="250" src="assets/logo.svg" alt="logo">
->>>>>>> Stashed changes
 </p>
 
 ## <p align="center"> Dream VPN <p align="center">•  Ui / Ux [DESIGN]("https://www.figma.com/community/file/1048677183722250131/DreamVPN-App-UI-%40rahulsharmadev)</a> • See [LICENSE](/LICENSE)
