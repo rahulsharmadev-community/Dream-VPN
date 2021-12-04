@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="http://material-bread.org/logo-shadow.svg" alt="logo">
+  <img width="200" src="assets/logo.svg" alt="logo">
 </p>
 
 # <p align="center"> Dream-VPN </p>
